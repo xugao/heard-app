@@ -1,0 +1,23 @@
+GET http://localhost:8080/test
+
+###
+GET http://localhost:8080/test/62c4b39f1c2fd72e7c2a7623
+
+### 
+POST http://localhost:8080/test
+content-type: application/json
+
+{
+    "name": "sample"
+}
+
+###
+DELETE http://localhost:8080/test/62c4b690dcb24c21e6b611c4
+
+###
+PATCH http://localhost:8080/test/62c4b592a34eba0f80e2797c
+content-type: application/json
+
+{
+    "name": "sample_updated"
+}

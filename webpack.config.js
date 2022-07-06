@@ -8,7 +8,7 @@ module.exports = {
   entry: ['babel-polyfill', './src/client/index.tsx'],
   output: {
     path: path.join(__dirname, outputDirectory),
-    filename: 'bundle.js'
+    filename: '[name].[contenthash].js',
   },
   // Enable sourcemaps for debugging webpack's output.
   devtool: 'source-map',
@@ -57,5 +57,17 @@ module.exports = {
       template: './public/index.html',
       favicon: './public/favicon.ico'
     })
-  ]
+  ],
+
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
+  },
 };
