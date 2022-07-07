@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { ServiceClient } from '../api/ServiceClient';
-import { dummySlice } from './slices/dummy';
+import { budgetsSlice } from './slices';
 
 const API_ROOT = 'http://localhost:8080'; //TODO: do not hard code
 
@@ -9,7 +9,7 @@ export type AppThunkExtra = { serviceClient: ServiceClient };
 
 const store = configureStore({
   reducer: {
-    dummy: dummySlice.reducer,
+    budgets: budgetsSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

@@ -21,8 +21,8 @@ dbConnection.on('error', (err) => console.error(err));
 dbConnection.once('open', () => console.log('DB connected'));
 
 // routes
-const testRouter = require('./routes/test');
-app.use('/test', testRouter);
+const budgetRouter = require('./routes/budget');
+app.use('/budget', budgetRouter);
 
 // sending undefined routes to index for client side routing
 // this must be defined after other server side routing

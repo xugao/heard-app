@@ -1,14 +1,14 @@
 /* eslint-disable consistent-return */
 
 const express = require('express');
-const Test = require('../models/test');
+const Budget = require('../models/budget');
 const handleError = require('../utils/handleError');
 
 // helpers
 
 async function getTestMiddleware(req, res, next) {
   return handleError(res, async () => {
-    const test = await Test.findById(req.params.id);
+    const test = await Budget.findById(req.params.id);
     if (test == null) {
       return res.status(404).json(`Id ${req.params.id} is not found`);
     }
@@ -23,7 +23,7 @@ const router = express.Router();
 // GET
 router.get('/', async (req, res) => {
   handleError(res, async () => {
-    const rows = await Test.find();
+    const rows = await Budget.find();
     res.json(rows);
   });
 });
@@ -37,13 +37,17 @@ router.post('/', async (req, res) => {
   if (!req.body.name) {
     return res.status(400).json({ message: 'invalid name' });
   }
+  if (!req.body.amount) {
+    return res.status(400).json({ message: 'invalid amount' });
+  }
 
-  const test = new Test({
+  const budget = new Budget({
     name: req.body.name,
+    amount: req.body.amount,
   });
 
   try {
-    const newRow = await test.save();
+    const newRow = await budget.save();
     return res.status(201).json(newRow);
   } catch (err) {
     return res.status(500).json({ message: err.message });

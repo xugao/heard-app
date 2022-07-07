@@ -43,3 +43,7 @@ The initial code includes the following ...
   - _Utilities:_ 3rd party component library `@fluentui/react`, CSS-in-JS library `@fluentui/merge-styles`
   - Client side routing using `react-router`
   - Boilerplate code for rendering a dummy home page and `/foo` page, calling dummy API, and setting up the redux store
+
+## Feature Requirements
+
+https://hackmd.io/E4Ds-KIfTnKrHB7pcyNfWg
