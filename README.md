@@ -19,7 +19,10 @@ yarn dev
 yarn build
 
 # Start production server
-yarn start (or npm start)
+yarn start
+
+# Run tests
+yarn test
 ```
 
 ## Initial Project
@@ -27,12 +30,13 @@ yarn start (or npm start)
 The initial code includes the following ...
 
 - General
-  - Typescript
-  - Linting & VSCode settings
-  - Production and dev server builds
+  - Supports both JS and TS
+  - Support linting & auto-formatting using prettier
+  - Configured production and dev server builds
+  - Configured `jest` as testing framework
 - Server side
-  - node.js + express
-  - NOSql DB connected using MongoDB
+  - Using node.js + express
+  - NoSQL DB connected using MongoDB
   - `/test` route for testing boilerplate code
 - Client side
   - _Rendering framework:_ ReactJS + Redux (state management)

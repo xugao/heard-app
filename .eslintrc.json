@@ -39,6 +39,15 @@
         "plugin:@typescript-eslint/recommended"
       ],
       "parser": "@typescript-eslint/parser"
+    },
+    {
+      "files": [
+        "**/*.test.js",
+        "**/*.test.jsx"
+      ],
+      "env": {
+        "jest": true
+      }
     }
   ]
 }

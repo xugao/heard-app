@@ -8,7 +8,8 @@
     "start": "npm run build && node src/server/index.js",
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "server": "nodemon src/server/index.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "jest"
   },
   "author": "Xu Gao",
   "dependencies": {
@@ -51,9 +52,11 @@
     "eslint-plugin-react": "^7.30.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^28.1.2",
     "nodemon": "^2.0.18",
     "source-map-loader": "^4.0.0",
     "style-loader": "^3.3.1",
+    "ts-jest": "^28.0.5",
     "ts-loader": "^9.3.1",
     "typescript": "^4.7.4",
     "url-loader": "^4.1.1",
